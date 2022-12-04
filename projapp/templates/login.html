@@ -1,0 +1,269 @@
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#id_password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+    </script>
+   
+</head>
+<body>
+        <form action="/loginTask"  method="post" style="border:1px solid;width:400px; padding:15px;margin:auto; background-color:skyblue;">
+        {% csrf_token %}
+          <table align="center" border="0"  bgcolor="white" width="400px" height="500px">
+            <tr>
+             <td>
+                 <h1 align="center">Login </h1><br>
+                 <hr size="3" color="red"></hr>
+             </td>
+            </tr>   
+           <tr align="center">
+            
+            <td>
+              User Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" placeholder="example@gmail.com" name="email">
+            </td>
+           </tr>
+            <tr align="center">
+            <br><br>
+            <td>
+              Password: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" placeholder="Password" name="password">
+            </td>
+           </tr>
+            <tr align="center">
+            <td colspan="2"  >
+             <input type="submit" style="background-color:#175bd1; border-radius:100px; font-size:17px; color:white; width:200px; height:45px;"  value="LOGIN">
+            </td>
+           
+            <td>
+                <select name="Login">
+                   <option><a href="/Student" name="Student">Student</a></option>
+                   <option><a href="/Faculty"name="Faculty">Faculty</a></option>
+                   <option><a href="/Admin">Admin</a></option>
+
+                </select>
+            </td>
+           </tr>
+           
+            <tr align="center">
+            <td colspan="1">
+               Don't have account?<a href="ragistration" style=" color:blue;  border-radius:2px;">New User</a>
+            </td>
+             
+           </tr>
+          </table>
+        </form>
+        
+</body>
+</html> -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <!-- icon link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+  <!-- icon link -->
+
+
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .list {
+      display: flex;
+      margin: 20px;
+
+    }
+
+    .list li {
+      margin: 20px;
+      list-style: none;
+      font-size: large;
+      position: relative;
+      left: 950px;
+      color: whitesmoke;
+
+    }
+
+    body {
+
+      background-image:url("{% static 'img/vector-jan-2021-19_generated.jpg' %}");
+      background-size: cover;
+    }
+
+    .input input {
+
+
+      border-radius: 14px;
+      width: 240px;
+      height: 28px;
+      margin-left: 18px;
+      margin-top: 35px;
+    }
+
+    /*.input {
+			text-align: center;
+		}*/
+    .forms {
+      border: 2px solid black;
+      width: 330px;
+      margin: auto;
+      height: 350px;
+      padding: 18px;
+      border-radius: 17px;
+      background-color: #f5f5f5;
+      box-shadow: rgb(23, 23, 3.3);
+
+
+
+    }
+
+    .btn {
+      font-size: larger;
+      margin-top: 24px;
+      margin-left: 45px;
+      background-color: black;
+      color: white;
+      border-radius: 13px;
+      width: 80px;
+
+
+    }
+
+    .btn:hover {
+      background-color: #8cceed;
+      cursor: pointer;
+
+
+    }
+
+    .company {
+
+      text-align: center;
+    }
+
+    #hide2 {
+      display: none;
+    }
+
+    .list li:hover {
+      background-color: #8cceed;
+      cursor: pointer;
+      border-radius: 8px;
+
+
+    }
+
+    .eye {
+      margin-left: -25px;
+
+    }
+
+    h4 {
+
+      text-align: center;
+      margin-top: 10px;
+
+    }
+
+    .option {
+
+      background-color: rgb(101, 93, 93);
+      color: white;
+      font-size: larger;
+      border-radius: 8px;
+      margin-left: 220px;
+
+    }
+
+    div .list li a {
+      text-decoration-line: none;
+      color: white;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <ul class="list">
+      <li><a href="/login">Login</a></li>
+      <li><a href="/ragistration">Ragister</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li>About Us</li>
+    </ul>
+
+  </div>
+  <form action="/loginTask" method="post" class="forms">
+    {% csrf_token %}
+    <h2 class='company'>Ready to Share</h2>
+    <h4>Bclient</h4>
+    <div class="input">
+      <i class="fa fa-user"></i>
+      <input type="text" name="email" placeholder="Username">
+    </div><br>
+    <div class="input">
+      <i class="fa fa-key"></i>
+      <input type="password" name="password" placeholder="*********" id="myinput">
+
+
+      <span class="eye" onclick="myfunction()">
+        <i id="hide1" class="fa fa-eye"></i>
+        <i id="hide2" class="fa fa-eye-slash"></i>
+      </span>
+    </div>
+    <br>
+    <select name="Login" class="option">
+      <option><a href="/Student" name="Student">Student</a></option>
+      <option><a href="/Faculty" name="Faculty">Faculty</a></option>
+      <option><a href="/Admin">Admin</a></option>
+
+    </select><br>
+    <button class="btn" type="submit">Login</button>
+    <button class="btn" type="submit"><a href="/forget">forget</a></button>
+  </form>
+  <script type="text/javascript">
+    function myfunction() {
+      var x = document.getElementById("myinput");
+      var y = document.getElementById("hide1");
+      var z = document.getElementById("hide2");
+
+      if (x.type == "password") {
+        x.type = "text";
+        y.style.display = "block";
+        z.style.display = "none";
+
+      }
+      else {
+        x.type = "password";
+        y.style.display = "none";
+        z.style.display = "block";
+
+      }
+
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+        }
+        #title{
+            color: rgb(248, 244, 11);
+        }
+    </style>
+</head>
+<body bgcolor="skyblue">
+    
+<!--     
+        {% for job in rec %}
+            <h1 align="center" id="title">Welcome {{job.name}}</h1>
+           <tr><th><h1>Name: {{job.name}}</h1></th><th><a href="/delete?eid={{job.id}}">Delete</a></th></tr><br>
+           <th><a href="/update?update={{job.id}}">update</a></th> 
+           <h1>F.Name: {{job.fname}}</h1><br>
+            <h1>Email: {{job.email}}</h1><br>
+            <h1>Password: {{job.password}}</h1><br>
+            <h1>Mobile No: {{job.mob}}</h1><br>
+            <h1>DOB: {{job.dob}}</h1><br>
+            <h1>Gender: {{job.gender}}</h1><br>    {% endfor %}-->
+         
+
+          
+            <div style="background-color:lightslategray; height:100px;padding:8px;">
+                <h1 style="text-align:center; color: black;">Welcome-----{{job.name}}-----this is your all the details that you submited. </h1>
+              </div>
+              <a href="/delete?eid={{job.id}}" style="font-size:40px;margin:6px;text-decoration-line:none;">Delete</a>
+              <a href="/update?update={{job.id}}" style="font-size:40px;margin:10px;text-decoration-line:none;">Edit</a>
+              <hr style="height:10px;background:lightcoral;">
+
+           
+            
+           
+               <table border="1" align="center"rowspan="3" bgcolor="lightgreen"colspan="1" style="padding:8px;">
+                <tr style="height:50px;">
+                   <th rowspan="1">NAME</th>
+                   <th rowspan="1">FATHER NAME</th>
+                   <th rowspan="1">EMAIL</th>
+                   <th rowspan="1">PASSWORD</th>
+                   <th rowspan="1">MO.NUMBER</th>
+                   <th rowspan="1">DATE-OF-BIRTH</th>
+                   <th rowspan="1">gender</th>
+
+                </tr>
+           
+                <tr rowspan="1"style="height:50px;">
+                {% for jod in db %}
+                  <td rowspan="1">Name: {{jod.name}}</td>
+                  <td rowspan="1">F.Name: {{jod.fname}}</td>
+                  <td rowspan="1">Email: {{jod.email}}</td>
+                  <td rowspan="1">Password: {{jod.password}}</td>
+                  <td rowspan="1">Mobile No: {{jod.mob}}</td>
+                  <td rowspan="1">DOB: {{jod.dob}}</td>
+                  <td rowspan="1">Gender: {{jod.gender}}</td>
+             
+
+                  </tr>
+                {% endfor %}
+       
+    
+
+               </table>
+                
+           
+
+             
+
+
+           
+          
+        
+      
+    
+    
+     
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+        }
+        #title{
+            color: rgb(248, 244, 11);
+        }
+    </style>
+</head>
+<body bgcolor="skyblue">
+    
+    
+        {% for job in rec %}
+            <h1 align="center" id="title">Welcome {{job.name}}</h1>
+            <h1>Name: {{job.name}}</h1><br>
+            <h1>F.Name: {{job.fname}}</h1><br>
+            <h1>Email: {{job.email}}</h1><br>
+            <h1>Password: {{job.password}}</h1><br>
+            <h1>Mobile No: {{job.mob}}</h1><br>
+            <h1>DOB: {{job.dob}}</h1><br>
+            <h1>Gender: {{job.gender}}</h1><br>
+        
+         {% endfor %}
+    
+    
+     
+</body>
+</html>

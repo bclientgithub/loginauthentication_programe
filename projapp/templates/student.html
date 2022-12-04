@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+	
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+
+
+    <style>
+        h1 {
+            color: red;
+        }
+
+        #title {
+            color: rgb(248, 244, 11);
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+
+        }
+    </style>
+</head>
+
+<body
+    style="background-image: url(static/images/studentlogo.webp);background-size: cover;background-repeat: no-repeat;">
+
+    <!--     
+        {% for job in rec %}
+            <h1 align="center" id="title">Welcome {{job.name}}</h1>
+           <tr><th><h1>Name: {{job.name}}</h1></th><th><a href="/delete?eid={{job.id}}">Delete</a></th></tr><br>
+           <th><a href="/update?update={{job.id}}">update</a></th> 
+           <h1>F.Name: {{job.fname}}</h1><br>
+            <h1>Email: {{job.email}}</h1><br>
+            <h1>Password: {{job.password}}</h1><br>
+            <h1>Mobile No: {{job.mob}}</h1><br>
+            <h1>DOB: {{job.dob}}</h1><br>
+            <h1>Gender: {{job.gender}}</h1><br>    {% endfor %}-->
+
+
+   
+<div class="row" style="background-color:rgb(119, 179, 252); height:60px;padding:17px;">
+        
+    <div>
+        <h2 style="text-align:center; color:rgb(246, 235, 235);">Welcome--{{job.name}}-This is your all the details
+            that you submited.</h2>
+        
+       
+    </div>
+</div>
+<br>
+{% for job in rec %}
+   
+ <a href="/delete?eid={{job.id}}" style="font-size:30px;margin:6px;text-decoration-line:none;">Delete</a>
+    <a href="/update?update={{job.id}}" style="font-size:30px;margin:10px;text-decoration-line:none;">Edit</a>
+    <hr style="height:10px;background:lightcoral;">
+
+
+  <div class="row">
+    <div class="col-2">
+            <ul style="box-shadow:blue;font-size:20px;border-collapse:collapse;">
+       
+            <li>NAME            <li>FATHER NAME</li>
+            <li>EMAIL</li>
+            <li>PASSWORD</li>
+            <li>MO.NUMBER</li>
+            <li>DATE-OF-BIRTH</li>
+            <li>gender</li>
+           
+
+           </ul>
+    </div>
+    <div class="col-2">
+  
+        <ul  style="height:50px;font-size:21px;list-style: none;">
+       
+            <li>{{job.name}}</li>
+            <li>{{job.fname}}</li>
+            <li>{{job.email}}</td>
+            <li>{{job.password}}</li>
+            <li>{{job.mob}}</li>
+            <li>{{job.dob}}</li>
+            <li>{{job.gender}}</li>
+        </ul>
+
+  
+    </div>
+    </div>
+
+
+
+
+
+
+
+    {% endfor %}
+
+
+
+
+
+</body>
+
+</html>

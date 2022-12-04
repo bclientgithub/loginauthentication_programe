@@ -1,0 +1,13 @@
+body{
+
+    background-color: rgb(251, 245, 245);
+}
+div ul li a:hover{
+
+    background-color:rgb(171, 159, 246);
+    border-radius: 9px;
+}
+.logo
+{
+    margin-left:10px;
+}
